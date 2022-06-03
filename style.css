@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+body {
+    background-image: url(background8.gif);
+    padding: 12px;
+    padding-bottom: 25px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    display: flex;
+    flex-grow: 1;
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+#Histogram {
+    flex-grow: 1; 
+    width: 1px !important;
+}
+
+.block {
+    font-weight: bold;
+    border: 4px solid #C0C0C0;
+    padding: 8px;
+}
+
+
+.block-label {
+    margin-bottom: 6px;
+}
+
+.form-control {
+    margin-bottom: 8px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+footer > * {
+    margin-right: 10px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> РГР по Web-программированию</title> 
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js" integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <header>
+          <h5> РГР по Web-программированию. Разработка компонента для отображения гистограмм.</h5>
+          <p>Выполнил студент группы АВТ-913: Малахов Д.Е.</p> 
+        </header>
+
+        <main>  
+          <div style="margin: auto;" class="block">
+            <div class="edit-type">
+                <p>
+                  <label class="block-label" for="input1">Изменить название гистограммы</label>
+                    <input id="input1" type="text" class="form-control" placeholder="Название гистограммы" aria-label="Название гистограммы" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" style="position:relative; width:100%" onclick="ChangeName()" id="button1">Изменить</button>
+                </p>
+            </div>
+    
+            <div class="remove-column">
+                <p>
+                  <label class="block-label" for="input2">Удалить столбец гистограммы</label>
+                    <input id="input2" type="text" class="form-control" placeholder="Название столбца" aria-label="Название столбца" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" style="position:relative; width:100%" onclick="DeleteColumn()" id="button2">Удалить</button>
+                </p>
+            </div>
+
+            <div class="clear-chart">
+                <p>
+                  Очистить график
+                  <button class="btn btn-outline-secondary" type="button" style="position:relative; width:100%" onclick="CleanChart()" id="button3">Очистить</button>
+                </p>
+            </div>
+          </div>
+          
+          <div class="chart-container">
+            <canvas id="Histogram" width="400" height="200"></canvas>
+          </div>
+        </main>
+        
+
+        <footer>
+            <div class = "block">
+              <p>
+                Добавить столбец данных в гистограмму
+                <br>
+                <table class="table table-striped" id="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th> 
+                        <th scope="col">Название</th>
+                        <th scope="col">Значение</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><input type="text" class="form-control" id="label" name="label"></td>
+                        <td><input type="text" class="form-control" id="value" name="value"></td>
+                      </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-outline-secondary" type="button" style="position:relative; width:100%" onclick="AddColumn()" id="button4">Добавить</button>
+              </p>
+            </div>
+    
+            <div>
+              <div style="margin-bottom: 20px;" class = "block">
+                <p>
+                  Сохранить график в формате .png
+                  <br>
+                  <button class="btn btn-outline-secondary" type="button" style="position:relative; width:100%" onclick="SaveAsImage()" id="button5">Сохранить график</button>
+                </p>
+              </div>
+  
+              <div class = "block">
+                <p>
+                  Загрузить данные в формате .csv
+                  <br>
+                  <input type="file" id="uploadfile" acccept=".csv">
+                  <br> 
+                  <button class="btn btn-outline-secondary" onclick="LoadAsCSV()" id="button6">Загрузить график</button>
+                </p>
+              </div>
+            </div>
+        </footer>
+
+        <script src="main.js"></script>
+    </body>
+</html>
